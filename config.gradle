@@ -1,0 +1,27 @@
+/**
+ *  全局统一配置文件
+ */
+ext {
+    //true 每个业务Module可以单独开发
+    //false 每个业务Module以lib的方式运行
+    //修改之后需要Sync方可生效
+    isModule = false
+//    buildToolsVersion = '28.0.0'
+//    compileSdkVersion = 29
+//    minSdkVersion = 19
+//    targetSdkVersion = 29
+//    supportLibraryVersion = '28.0.0'
+
+    buildToolsVersion = '27.1.1'
+    compileSdkVersion = 27
+    minSdkVersion = 19
+    targetSdkVersion = 27
+    supportLibraryVersion = '27.1.1'
+    vcode = increasedVersionCode()
+    vname = increasedVersionCode().toString()
+}
+
+// versionCode按时间自增
+def increasedVersionCode() {
+    return (Integer) (System.currentTimeMillis() / 1000 / 60 / 60 / 24)
+}

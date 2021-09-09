@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="artifacts:faceplatform-release">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/faceplatform-release.aar/1c43c611a92c3c937ce95e83e4a69e56/jars/libs/bd_unifylicense.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/faceplatform-release.aar/1c43c611a92c3c937ce95e83e4a69e56/jars/libs/libbaidusec.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/faceplatform-release.aar/1c43c611a92c3c937ce95e83e4a69e56/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/faceplatform-release.aar/1c43c611a92c3c937ce95e83e4a69e56/jars/libs/liantian.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/faceplatform-release.aar/1c43c611a92c3c937ce95e83e4a69e56/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/faceplatform-release.aar/1c43c611a92c3c937ce95e83e4a69e56/jars/libs/FaceSDK.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

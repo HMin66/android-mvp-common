@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/app_white</color>
+    <color name="colorPrimaryDark">@color/app_white</color>
+    <color name="colorAccent">@color/text_black_666</color>
+
+    <color name="app_page_bg">#f0f0f0</color>
+    <color name="app_default_theme">#FFE536</color>
+
+    <!--app主题色 蓝色 浅蓝色用作背景 红色 黄色 绿色-->
+    <color name="app_blue">#00A0E8</color>
+    <color name="app_baby_blue">#D9E4E8</color>
+    <color name="app_red">#FF4A4A</color>
+    <color name="app_baby_yellow">#FEFCED</color>
+    <color name="app_yellow">#FF9900</color>
+    <color name="app_green">#56BA2E</color>
+    <color name="app_bg">#F0F0F0</color>
+    <color name="app_white">#F8F8F8</color>
+    <color name="gray">#E8E8E8</color>
+
+    <!--控件颜色 线条-->
+    <color name="app_line">#E6E6E6</color>
+    <color name="app_line_dark">#BBBBBB</color>
+
+
+    <!--按钮颜色 正常 点击 禁用-->
+    <color name="button_normal">#00A0E8</color>
+    <color name="button_click">#0076AB</color>
+    <color name="button_disabled">#DDDDDD</color>
+
+    <!--列表的item的颜色值 正常和点击-->
+    <color name="item_normal">#FFFFFF</color>
+    <color name="item_click">#CCCCCC</color>
+
+    <!--字体的颜色-->
+    <color name="text_black_333">#333333</color>
+    <color name="text_black_666">#666666</color>
+    <color name="text_black_888">#888888</color>
+    <color name="text_black_999">#999999</color>
+    <color name="text_black_ccc">#CCCCCC</color>
+    <color name="text_black_aaa">#AAAAAA</color>
+    <color name="text_black_c6c6">#C6C6C6</color>
+
+    <!--其他颜色-->
+    <color name="white">#FFFFFF</color>
+    <color name="white_gray">#f8f8f8</color>
+    <color name="white_70">#B3FFFFFF</color>
+    <color name="white_80">#DDFFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="search">#fed25f</color>
+    <color name="remind_bar_bg">#fff9eb</color>
+</resources>

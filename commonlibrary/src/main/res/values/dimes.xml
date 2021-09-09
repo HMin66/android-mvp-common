@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--app通用的尺寸-->
+    <dimen name="margin_4">4dp</dimen>
+    <dimen name="margin_5">5dp</dimen>
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="margin_10">10dp</dimen>
+    <dimen name="margin_15">15dp</dimen>
+    <dimen name="margin_20">20dp</dimen>
+    <dimen name="margin_30">30dp</dimen>
+    <dimen name="margin_47">47dp</dimen>
+    <dimen name="toolbar_height">56dp</dimen>
+    <dimen name="common_item_height">48dp</dimen>
+    <dimen name="search_height">44dp</dimen>
+    <dimen name="member_item_height">64dp</dimen>
+    <dimen name="common_button_height">48dp</dimen>
+    <dimen name="btn_menu">49dp</dimen>
+    <dimen name="round">3dp</dimen>
+    <dimen name="line">1px</dimen>
+    <dimen name="head_height">44dp</dimen>
+    
+    <dimen name="text_18">18sp</dimen>
+    <dimen name="text_16">16sp</dimen>
+    <dimen name="text_14">14sp</dimen>
+    <dimen name="text_15">15sp</dimen>
+    <dimen name="text_13">13sp</dimen>
+    <dimen name="text_12">12sp</dimen>
+    <dimen name="text_10">10sp</dimen>
+
+
+    <dimen name="item_height">64dp</dimen>
+</resources>

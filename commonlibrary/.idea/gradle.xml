@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/.." />
+            <option value="$PROJECT_DIR$/../app" />
+            <option value="$PROJECT_DIR$/../chehuo_goods" />
+            <option value="$PROJECT_DIR$/../chehuo_transport" />
+            <option value="$PROJECT_DIR$/../chehuo_vehicle" />
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/../cuohe_home" />
+            <option value="$PROJECT_DIR$/../faceplatform-release" />
+            <option value="$PROJECT_DIR$/../faceplatform-ui" />
+            <option value="$PROJECT_DIR$/../framelibrary" />
+            <option value="$PROJECT_DIR$/../module_home" />
+            <option value="$PROJECT_DIR$/../module_login" />
+            <option value="$PROJECT_DIR$/../module_main" />
+            <option value="$PROJECT_DIR$/../module_message" />
+            <option value="$PROJECT_DIR$/../module_mine" />
+            <option value="$PROJECT_DIR$/../reslibrary" />
+            <option value="$PROJECT_DIR$/../ziying_home" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

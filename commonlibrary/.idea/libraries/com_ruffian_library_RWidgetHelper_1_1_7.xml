@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.ruffian.library:RWidgetHelper-1.1.7">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/RWidgetHelper-1.1.7.aar/790b535815f2be8f87dc4dbc6bcb8dc8/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/RWidgetHelper-1.1.7.aar/790b535815f2be8f87dc4dbc6bcb8dc8/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.ruffian.library/RWidgetHelper/1.1.7/75360f3193146c1ac40d5a297b57e62f32cf5dc8/RWidgetHelper-1.1.7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

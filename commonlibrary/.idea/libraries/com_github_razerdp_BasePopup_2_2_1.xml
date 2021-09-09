@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.github.razerdp:BasePopup-2.2.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/BasePopup-2.2.1.aar/5c1361ae52be738a6456901eb75f97d0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/BasePopup-2.2.1.aar/5c1361ae52be738a6456901eb75f97d0/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.razerdp/BasePopup/2.2.1/e1b309e526f314a24a6779a7de3ffb71cbf0ce5d/BasePopup-2.2.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
