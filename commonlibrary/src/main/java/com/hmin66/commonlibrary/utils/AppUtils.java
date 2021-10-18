@@ -208,7 +208,7 @@ public class AppUtils {
         Intent intent = new Intent(Intent.ACTION_VIEW);
         File file = new File(apkPath);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            Uri apkUri = FileProvider.getUriForFile(context, getPackageName(context) + ".fileProvider", file);
+            Uri apkUri = FileProvider.getUriForFile(context, getPackageName(context) + ".fileprovider", file);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             intent.setDataAndType(apkUri, "application/vnd.android.package-archive");
