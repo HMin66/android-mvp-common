@@ -3,13 +3,20 @@ package com.hmin66.commonlibrary.utils;
 import android.annotation.SuppressLint;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
+import android.provider.Settings;
+import android.support.annotation.RequiresApi;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.content.FileProvider;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -24,7 +31,7 @@ import java.util.UUID;
  */
 
 public class AppUtils {
-
+    public static final int sInstallPermissionRequestCode = 10086;
 
     /**
      * 判断是否是主进程
@@ -195,5 +202,48 @@ public class AppUtils {
             ex.printStackTrace();
         }
         return null;
+    }
+
+    public static void installApk(FragmentActivity context, String apkPath) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        File file = new File(apkPath);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            Uri apkUri = FileProvider.getUriForFile(context, getPackageName(context) + ".fileProvider", file);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            intent.setDataAndType(apkUri, "application/vnd.android.package-archive");
+        } else {
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            Uri uri = Uri.fromFile(file);
+            intent.setDataAndType(uri, "application/vnd.android.package-archive");
+        }
+        context.startActivity(intent);
+    }
+
+    public static void installApkO(FragmentActivity context, String downloadApkPath) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            //是否有安装位置来源的权限
+            boolean haveInstallPermission = context.getPackageManager().canRequestPackageInstalls();
+            if (haveInstallPermission) {
+//                L.i("8.0手机已经拥有安装未知来源应用的权限，直接安装！");
+                installApk(context, downloadApkPath);
+            } else {
+                Toast.makeText(context, "安装应用需要打开安装未知来源应用权限，请去设置中开启权限",Toast.LENGTH_LONG).show();
+                startInstallPermissionSettingActivity(context);
+            }
+        } else {
+            installApk(context, downloadApkPath);
+        }
+    }
+
+    /**
+     * 跳转到设置-允许安装未知来源-页面
+     */
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public static void startInstallPermissionSettingActivity(FragmentActivity context) {
+        Uri packageURI = Uri.parse("package:" + AppUtils.getPackageName(context));
+        //注意这个是8.0新API
+        Intent intent = new Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES, packageURI);
+        context.startActivityForResult(intent, sInstallPermissionRequestCode);
     }
 }
