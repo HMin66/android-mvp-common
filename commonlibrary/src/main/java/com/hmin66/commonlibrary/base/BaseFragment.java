@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 
 import com.trello.rxlifecycle2.components.support.RxFragment;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.io.Serializable;
 
 import butterknife.ButterKnife;
@@ -50,6 +52,9 @@ public abstract class BaseFragment extends RxFragment {
         mBundle = getArguments();
         initBundle(mBundle);
         mContext = getActivity();
+        if (useEventBus()){
+            EventBus.getDefault().register(this);
+        }
     }
 
     @Nullable
@@ -147,6 +152,9 @@ public abstract class BaseFragment extends RxFragment {
         super.onDestroy();
         mRootView = null;
         mFinished = true;
+        if (EventBus.getDefault().isRegistered(this)){
+            EventBus.getDefault().unregister(this);
+        }
     }
 
     private void initVariable() {
@@ -178,6 +186,8 @@ public abstract class BaseFragment extends RxFragment {
     protected void initBundle(Bundle arguments){
         if (arguments == null) return;
     }
+
+    protected boolean useEventBus() {return false;}
 
     protected abstract int getLayoutId();
 

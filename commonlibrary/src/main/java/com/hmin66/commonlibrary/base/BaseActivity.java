@@ -17,6 +17,8 @@ import com.hmin66.commonlibrary.AppManager;
 import com.jaeger.library.StatusBarUtil;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -51,6 +53,10 @@ public abstract class BaseActivity extends RxAppCompatActivity {
         this.mBundle = getIntent().getExtras();
         this.mSavedInstanceState = savedInstanceState;
 
+        if (useEventBus()){
+            EventBus.getDefault().register(this);
+        }
+
         initBundle(mBundle);
         initView();
         initPermission();
@@ -84,6 +90,8 @@ public abstract class BaseActivity extends RxAppCompatActivity {
         return true;
     }
 
+    protected boolean useEventBus() {return false;}
+
     protected abstract int getLayoutId();
 
     protected  void initTheme(){}
@@ -111,6 +119,9 @@ public abstract class BaseActivity extends RxAppCompatActivity {
         // 移除view绑定
         if (unbinde != null) {
             unbinde.unbind();
+        }
+        if (EventBus.getDefault().isRegistered(this)){
+            EventBus.getDefault().unregister(this);
         }
         AppManager.getAppManager().finishActivity(this);
     }
