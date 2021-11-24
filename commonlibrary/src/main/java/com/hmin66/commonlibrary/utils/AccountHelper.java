@@ -54,7 +54,7 @@ public class AccountHelper {
     }
 
     public boolean isLogin(){
-        return !TextUtils.isEmpty(mToken);
+        return !TextUtils.isEmpty(mACache.getAsString(TOKEN));
     }
 
     public String getXgToken() {
