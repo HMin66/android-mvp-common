@@ -2,6 +2,9 @@ package com.hmin66.commonlibrary.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,19 +12,79 @@ import android.view.ViewGroup;
 
 import com.hmin66.commonlibrary.R;
 
+import java.util.ArrayList;
+
 /**
  * 描述：
  * 作者： 天天童话丶
  * 时间： 2018/4/30.
  */
-public class BaseDialog extends Dialog {
+public class BaseDialog extends Dialog implements DialogInterceptor{
+
+    private DialogChain mChain = null;
+    public DialogInterceptor mInterceptor;
+    private ArrayList<OnDismissListener> mListeners;
+
+    public void setInterceptor(DialogInterceptor interceptor) {
+        mInterceptor = interceptor;
+    }
+
+    @Override
+    public void setOnDismissListener(@Nullable OnDismissListener listener) {
+        if (listener != null) {
+            mListeners.add(listener);
+            super.setOnDismissListener(new OnDismissListener() {
+                @Override
+                public void onDismiss(DialogInterface d) {
+                    for (OnDismissListener listener : mListeners) {
+                        listener.onDismiss(d);
+                    }
+                }
+            });
+        }
+    }
+
+    /*下一个拦截器*/
+    public DialogChain getChain() {
+        return mChain;
+    }
+
+    @Override
+    public boolean intercept(DialogChain chain) {
+        mChain = chain;
+        if (mInterceptor != null){
+            boolean isIntercept = mInterceptor.intercept(chain);
+            if (isIntercept) {
+                // 拦截 下一个dialog继续处理
+                chain.process();
+                return true;
+            } else {
+                // 不拦截
+                this.show();
+                return false;
+            }
+        } else {
+            // 默认不拦截
+            this.show();
+            return false;
+        }
+    }
 
     private BaseController mController;
 
     public BaseDialog(Context context, int themeResId) {
         super(context, themeResId);
 
+        mListeners = new ArrayList<>();
         mController = new BaseController(this, getWindow());
+        setOnDismissListener(new OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                if (mChain != null) {
+                    mChain.process();
+                }
+            }
+        });
     }
 
     public View getContentView() {
@@ -104,6 +167,7 @@ public class BaseDialog extends Dialog {
             }
             dialog.setOnCancelListener(P.mOnCancelListener);
             dialog.setOnDismissListener(P.mOnDismissListener);
+            dialog.setInterceptor(P.mInterceptor);
             if (P.mOnKeyListener != null) {
                 dialog.setOnKeyListener(P.mOnKeyListener);
             }
@@ -232,6 +296,11 @@ public class BaseDialog extends Dialog {
          */
         public Builder setOnKeyListener(OnKeyListener onKeyListener) {
             P.mOnKeyListener = onKeyListener;
+            return this;
+        }
+
+        public Builder setInterceptor(DialogInterceptor interceptor) {
+            P.mInterceptor = interceptor;
             return this;
         }
     }

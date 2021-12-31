@@ -64,6 +64,8 @@ class BaseController {
         public DialogInterface.OnDismissListener mOnDismissListener;
         //dialog key监听
         public DialogInterface.OnKeyListener mOnKeyListener;
+        //dialog 拦截器
+        public DialogInterceptor mInterceptor;
 
         public View mContentView;
         public int mContentViewLayoutId;
