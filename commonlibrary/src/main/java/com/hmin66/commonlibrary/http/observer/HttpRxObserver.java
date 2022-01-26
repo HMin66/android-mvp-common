@@ -10,6 +10,7 @@ import com.hmin66.commonlibrary.http.retrofit.HttpRequestListener;
 import com.hmin66.commonlibrary.http.retrofit.RxActionManagerImpl;
 import com.hmin66.commonlibrary.http.server.ServerResponseCode;
 import com.hmin66.commonlibrary.router.path.ARouterPath;
+import com.hmin66.commonlibrary.utils.AccountHelper;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -50,6 +51,7 @@ public abstract class HttpRxObserver<T> implements Observer<T>, HttpRequestListe
                 ARouter.getInstance()
                         .build(ARouterPath.LoginActivity)
                         .navigation();
+                AccountHelper.getInstance().exitLogin();
             }
         } else {
             onError(new ApiException(e, ERROR.UN_KNOWN_ERROR));
