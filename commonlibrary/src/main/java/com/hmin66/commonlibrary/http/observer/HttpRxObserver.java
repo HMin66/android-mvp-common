@@ -32,9 +32,7 @@ public abstract class HttpRxObserver<T> implements Observer<T>, HttpRequestListe
 
     private String mTag;//请求标识
 
-    public HttpRxObserver() {
-
-    }
+    public HttpRxObserver() { }
 
     public HttpRxObserver(String tag) {
         this.mTag = tag;
