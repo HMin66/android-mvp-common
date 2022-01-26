@@ -1,0 +1,9 @@
+diff a/build.gradle b/build.gradle	(rejected hunks)
+@@ -12,6 +12,7 @@
+         //butterknife插件
+         classpath 'com.jakewharton:butterknife-gradle-plugin:8.4.0'
+ 
++        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+         // NOTE: Do not place your application dependencies here; they belong
+         // in the individual module build.gradle files
+     }
