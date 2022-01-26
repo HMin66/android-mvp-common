@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/android-mvp-common.iml" filepath="$PROJECT_DIR$/android-mvp-common.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/commonlibrary/commonlibrary.iml" filepath="$PROJECT_DIR$/commonlibrary/commonlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android-mvp-common.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android-mvp-common.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/commonlibrary/android-mvp-common.commonlibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/commonlibrary/android-mvp-common.commonlibrary.iml" />
     </modules>
   </component>
 </project>
