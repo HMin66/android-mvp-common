@@ -1,36 +1,36 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.jakewharton.butterknife'
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.novoda.bintray-release'
-
-publish {
-    userOrg = 'HMin66'
-    groupId = 'com.github'
-    artifactId = 'android-mvp-common'
-    publishVersion = '1.3.3'
-    desc = 'Oh hi, this is a nice description for a project, right?'
-    website = 'https://github.com/novoda/bintray-release'
-}
-
-//apply plugin: 'maven-publish'
-group='com.github.HMin66'
-//version = '1.3.3'
+//apply plugin: 'com.github.dcendents.android-maven'
+//apply plugin: 'com.novoda.bintray-release'
 //
-//afterEvaluate {
-//    publishing {
-//        publications {
-//            release(MavenPublication) {
-//                // The following applies a component to this publication
-//                // which results in publishing an app bundle.
-//                from components.release
-//
-//                groupId = 'com.github.HMin66'
-//                artifactId = 'android-mvp-common'
-//                version = '1.3.3'
-//            }
-//        }
-//    }
+//publish {
+//    userOrg = 'HMin66'
+//    groupId = 'com.github'
+//    artifactId = 'android-mvp-common'
+//    publishVersion = '1.3.3'
+//    desc = 'Oh hi, this is a nice description for a project, right?'
+//    website = 'https://github.com/novoda/bintray-release'
 //}
+
+apply plugin: 'maven-publish'
+group='com.github.HMin66'
+version = '1.3.3'
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                // The following applies a component to this publication
+                // which results in publishing an app bundle.
+                from components.release
+
+                groupId = 'com.github.HMin66'
+                artifactId = 'android-mvp-common'
+                version = '1.3.3'
+            }
+        }
+    }
+}
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
